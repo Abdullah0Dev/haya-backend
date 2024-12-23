@@ -15,7 +15,6 @@
     "@tensorflow/tfjs-node": "^1.7.0",
     "@tensorflow/tfjs-node-gpu": "^4.22.0",
     "canvas": "^2.11.2",
-    "clarifai-nodejs-grpc": "^10.11.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

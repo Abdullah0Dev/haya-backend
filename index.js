@@ -3,7 +3,6 @@ const tf = require("@tensorflow/tfjs-node");
 
 tf.setBackend("cpu"); // Optional for debugging
 
-// require("@tensorflow/tfjs-node-gpu");
 const express = require("express");
 const cors = require("cors");
 const faceapi = require("face-api.js");
@@ -12,12 +11,6 @@ const sharp = require("sharp");
 const { Canvas, Image, ImageData, loadImage, createCanvas } = require("canvas");
 const fs = require("fs");
 const multer = require("multer");
-const { ClarifaiStub, grpc } = require("clarifai-nodejs-grpc");
-const { hostname } = require("os");
-const stub = ClarifaiStub.grpc();
-const metadata = new grpc.Metadata();
-metadata.set("authorization", `Key ${process.env.CLARIFAI_API_KEY}`);
-
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -25,8 +18,7 @@ app.use(cors());
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./uploads/");
-
-  },  
+  },
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname)); // Save with a unique name ->
   },

@@ -1,0 +1,5 @@
+node_modules/*
+!node_modules/essential-package
+tests/
+docs/
+examples/
