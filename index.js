@@ -36,7 +36,7 @@ const upload = multer({ storage: storage });
 if (!fs.existsSync("./uploads")) {
   fs.mkdirSync("./uploads");
 }
-
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 
 app.get("/", (req, res) => {
