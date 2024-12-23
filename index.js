@@ -25,9 +25,10 @@ app.use(cors());
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "./uploads/");
-  },
+
+  },  
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Save with a unique name
+    cb(null, Date.now() + path.extname(file.originalname)); // Save with a unique name ->
   },
 });
 const upload = multer({ storage: storage });
