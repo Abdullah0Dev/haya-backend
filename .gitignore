@@ -19,3 +19,6 @@ yarn-error.*
 *.tsbuildinfo
  
 .vercel
+
+# Local Netlify folder
+.netlify
